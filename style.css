@@ -1,0 +1,95 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 6vmin;
+  text-align: center;
+  overflow: hidden;
+  background: black;
+  color: white;
+  margin: 0;
+}
+
+/* App */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  /* !important to override setting element background */
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.App > h1,
+.App > h2 {
+  margin: 0.2em;
+  text-shadow: 0 0 5px black;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.time {
+  color: lime;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 1em !important;
+}
+
+/* Menu */
+.Menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+}
+
+.Menu .bar {
+  background: #333;
+  text-align: left;
+  padding: 3px;
+  height: 28px;
+
+  display: flex;
+  flex-direction: row;
+
+  transform: translateY(-100%);
+  transition: 0.1s transform;
+}
+
+.Menu:hover .bar {
+  transform: none;
+}
+
+/* Preferences */
+.Preferences {
+  background: #222a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+
+  font-size: 1rem;
+  padding: 3em 1em;
+  transition: 0.1s transform;
+}
+
+.Preferences.hidden {
+  transform: translateX(-100%);
+}
+
+/* Stop the user from accidentaly selecting stuff */
+*:not(input) {
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: -moz-none;
+  -webkit-user-select: none;
+}
+
+::selection,
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
