@@ -34,6 +34,7 @@ function Preferences({ showPreferences, done }) {
           defaultValue: localStorage.hideMessage,
           onChange(ev) {
             localStorage.hideMessage = ev.target.checked;
+            refresh();
           },
         }),
       ),
@@ -45,6 +46,7 @@ function Preferences({ showPreferences, done }) {
           defaultValue: localStorage.background,
           onChange(ev) {
             localStorage.background = ev.target.value;
+            refresh();
           },
         }),
       ),
@@ -58,7 +60,9 @@ function Preferences({ showPreferences, done }) {
           if (files.length > 0) {
             const file = files[0];
             const base64 = await toBase64(file);
+
             localStorage.background = `url('${base64}')`;
+            refresh();
           }
         }
       }),

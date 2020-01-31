@@ -2,4 +2,9 @@ import App from './App.mjs';
 
 const { createElement: c } = React;
 
-ReactDOM.render(c(App), document.getElementById('root'));
+function renderPage() {
+  ReactDOM.render(c(App), document.getElementById('root'));
+}
+
+window.refresh = renderPage;
+renderPage();
