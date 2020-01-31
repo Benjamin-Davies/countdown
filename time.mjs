@@ -38,7 +38,8 @@ function nowSecs() {
     nowDate.getHours(),
     nowDate.getMinutes(),
     nowDate.getSeconds()
-  );
+  // Implement late by pretending that it is earlier
+  ) - secs(0, window.late || 0);
 }
 
 /**

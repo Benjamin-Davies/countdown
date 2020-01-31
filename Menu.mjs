@@ -41,6 +41,21 @@ function Preferences({ showPreferences, done }) {
     ),
     c('p', null,
       c('label', null,
+        'Late by ',
+        c('input', {
+          type: 'number',
+          defaultValue: 0,
+          onChange(ev) {
+            window.late = ev.target.value;
+            console.log(late)
+            refresh();
+          },
+        }),
+        'minutes',
+      ),
+    ),
+    c('p', null,
+      c('label', null,
         'Background ',
         c('input', {
           defaultValue: localStorage.background,
