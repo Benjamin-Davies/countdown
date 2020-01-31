@@ -67,20 +67,23 @@ function Preferences({ showPreferences, done }) {
       ),
     ),
     c('p', null,
-      c('input', {
-        type: 'file',
-        accept: 'image/*',
-        async onChange(ev) {
-          const files = ev.target.files;
-          if (files.length > 0) {
-            const file = files[0];
-            const base64 = await toBase64(file);
+      c('label', null,
+        'Background Image ',
+        c('input', {
+          type: 'file',
+          accept: 'image/*',
+          async onChange(ev) {
+            const files = ev.target.files;
+            if (files.length > 0) {
+              const file = files[0];
+              const base64 = await toBase64(file);
 
-            localStorage.background = `url('${base64}')`;
-            refresh();
+              localStorage.background = `url('${base64}')`;
+              refresh();
+            }
           }
-        }
-      }),
+        }),
+      ),
     ),
     c('p', null,
       c('button', {
