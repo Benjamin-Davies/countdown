@@ -11,13 +11,13 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <script defer crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-  <script defer crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script defer crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script defer crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 
   <!-- Some preloads -->
-  <link rel="preload" href="App.mjs">
-  <link rel="preload" href="Menu.mjs">
-  <link rel="preload" href="time.mjs">
+  <link rel="preload" href="App.mjs" as="script">
+  <link rel="preload" href="Menu.mjs" as="script">
+  <link rel="preload" href="time.mjs" as="script">
 
   <script defer type="module" src="app.mjs"></script>
 </head>
