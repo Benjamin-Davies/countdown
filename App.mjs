@@ -14,7 +14,7 @@ function App() {
   });
 
   const background = localStorage.background;
-  const showMessage = localStorage.hideMessage !== 'true';
+  const showMessage = localStorage.showMessage === 'true';
 
   return c('div', {
     className: 'App',

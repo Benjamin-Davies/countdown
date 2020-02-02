@@ -28,12 +28,12 @@ function Preferences({ showPreferences, done }) {
     c('h1', null, 'Preferences'),
     c('p', null,
       c('label', null,
-        'Hide Message ',
+        'Show Message ',
         c('input', {
           type: 'checkbox',
-          defaultValue: localStorage.hideMessage,
+          defaultValue: localStorage.showMessage,
           onChange(ev) {
-            localStorage.hideMessage = ev.target.checked;
+            localStorage.showMessage = ev.target.checked;
             refresh();
           },
         }),
