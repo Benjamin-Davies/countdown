@@ -3,7 +3,9 @@ body {
   font-size: 6vmin;
   text-align: center;
   overflow: hidden;
-  background: black;
+  background: url('Welcome.png') no-repeat, black;
+  background-position: center;
+  background-size: cover;
   color: white;
   margin: 0;
 }
