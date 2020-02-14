@@ -14,7 +14,7 @@ function App() {
   });
 
   const background = localStorage.background;
-  const showMessage = localStorage.showMessage === 'true';
+  const showWelcome = localStorage.showWelcome === 'true';
 
   return c('div', {
     className: 'App',
@@ -22,8 +22,8 @@ function App() {
   },
     c(Spacer),
 
-    showMessage && c('h2', null, 'Nau Mai, Haere Mai'),
-    showMessage && c('h2', null, 'Welcome'),
+    showWelcome && c('h2', null, 'Nau Mai, Haere Mai'),
+    showWelcome && c('h2', null, 'Welcome'),
 
     c(Spacer),
 

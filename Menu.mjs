@@ -28,6 +28,19 @@ function Preferences({ showPreferences, done }) {
     c('h1', null, 'Preferences'),
     c('p', null,
       c('label', null,
+        'Show Welcome ',
+        c('input', {
+          type: 'checkbox',
+          defaultValue: localStorage.showWelcome,
+          onChange(ev) {
+            localStorage.showWelcome = ev.target.checked;
+            refresh();
+          },
+        }),
+      ),
+    ),
+    c('p', null,
+      c('label', null,
         'Show Message ',
         c('input', {
           type: 'checkbox',

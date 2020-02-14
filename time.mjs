@@ -3,13 +3,20 @@ const services = [
   { start: secs(10, 30), end: secs(12) },
 ];
 
+const noServicesText = () =>
+  localStorage.showMessage === 'true'
+    ? 'No services found' : '';
+const doneText = () =>
+  localStorage.showMessage === 'true'
+    ? 'Lets Start' : '';
+
 export function getTime() {
   const now = nowSecs();
   const dest = pickDest(now);
   const left = dest - now;
 
-  if (dest === null) return 'No services found';
-  if (left < 0) return 'Lets Start';
+  if (dest === null) return noServicesText();
+  if (left < 0) return doneText();
 
   if (left < 60) return left.toString();
   if (left < 3600)
